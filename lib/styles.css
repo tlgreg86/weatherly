@@ -1,0 +1,49 @@
+body {
+  width: 100%;
+}
+
+#application {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  border: solid 1px red;
+  margin: 5%;
+}
+
+/* Phase 1 Styling */
+
+.phase1 {
+  text-align: center;
+  border: 1px solid blue;
+  padding: 2%;
+}
+
+.current-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.current-temp {
+  font-size: 2em;
+  margin: 0;
+}
+
+.high-low {
+  font-size: 0.9em;
+}
+
+.location-input {
+  padding: 1%;
+  width: 90%;
+  border: 2px solid #7f7f7f;
+}
+
+.submit-button {
+  border: 1px;
+}
+
+.input-and-submit {
+  display: flex;
+  flex-direction: row;
+}
