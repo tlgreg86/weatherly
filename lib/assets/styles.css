@@ -18,7 +18,7 @@ body {
   padding: 2%;
 }
 
-.current-date {
+.current-day {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,7 +33,7 @@ body {
   font-size: 0.9em;
 }
 
-.location-input {
+.city-input {
   padding: 1%;
   width: 97%;
   border: 2px solid #7f7f7f;
