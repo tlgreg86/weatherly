@@ -32,7 +32,7 @@ describe('Input component', () => {
     let button = wrapper.find('.submit-button');
 
     button.simulate('click');
-    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalled()
 
   })
 
