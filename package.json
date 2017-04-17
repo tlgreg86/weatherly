@@ -9,6 +9,10 @@
     "lint:watch": "esw -w lib/**",
     "test": "jest"
   },
+  "jest": {
+   "setupTestFrameworkScriptFile": "./mockLocalStorage.js"
+ },
+
   "repository": {
     "type": "git",
     "url": "https://github.com/turingschool-examples/react-starter-kit.git"
