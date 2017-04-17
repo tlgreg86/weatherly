@@ -1,4 +1,4 @@
-
+#
 # {
 #   "parser": "babel-eslint",
 #   "extends": "airbnb/base",
@@ -14,5 +14,3 @@
 #     "no-underscore-dangle": [0]
 #   }
 # }
-
-
