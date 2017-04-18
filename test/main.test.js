@@ -5,17 +5,6 @@ import Main from "../lib/components/Main.js";
 import Input from "../lib/components/Input.js";
 
 describe("main", () => {
-  // it.skip('changes state when fetch weather is called',()=>{
-  //   let wrapper = shallow(<Constructor super = {()=>{}}/>)
-  //   let weather = wrapper.find(this.state.weather)
-  //   let result =
-  //
-  //   let button = wrapper.find('.submit-button');
-  //   let input = wrapper.find('.location-input')
-  //
-  //   weather.simulate('change', {target: {value: 'Denver, CO'}}
-  //   expect(wrapper.state('weather')).toEqual('result')
-  // })
 
   it("state.input should change when input is changed", () => {
     let wrapper = shallow(<Input fetchWeather={() => {}} />);
