@@ -31,8 +31,6 @@ describe('main', () => {
 
   })
 
-
-
     it('fetches weather with user input', () => {
       let spy = jest.fn()
       let wrapper = mount(<Input fetchWeather={spy} />);
