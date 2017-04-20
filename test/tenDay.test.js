@@ -2,13 +2,13 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import WeatherAPI from "./WeatherAPI.js";
 import Main from "../lib/components/Main.js";
-import tenDay from "../lib/components/tenDay.js";
+import TenDay from "../lib/components/TenDay.js";
 import Input from "../lib/components/Input.js";
 
 describe('tenDay', ()=>{
 
 it('should change when input is changed', () => {
-  let wrapper = shallow(<TenDay tenDayWeather ={[WeatherAPI]} />);
+  let wrapper = shallow(<TenDay tenDay ={[WeatherAPI]} />);
 
   // it("has a section with a current location", () => {
   //   let currentLocation = wrapper.find(".current-container");
@@ -21,4 +21,5 @@ it('should change when input is changed', () => {
   //
   //   expect(currentLocation.props().children).toEqual("Denver, CO");
   // });
+});
 });
