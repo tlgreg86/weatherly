@@ -11,15 +11,17 @@ describe("sevenHour", () => {
 
 });
 
-  // it("has a section with a current location", () => {
-  //   let currentLocation = wrapper.find(".current-container");
-  //
-  //   expect(currentLocation.length).toEqual(1);
-  // });
-  //
-  // it("displays the location of the user input", () => {
-  //   let currentLocation = wrapper.find(".current-location");
-  //
-  //   expect(currentLocation.props().children).toEqual("Denver, CO");
-  // });
+  it.skip("has a section with a current location", () => {
+    let wrapper = shallow(<SevenHour/>)
+    let currentLocation = wrapper.find(".current-container");
+
+    expect(currentLocation.length).toEqual(1);
+  });
+
+  it.skip("displays the location of the user input", () => {
+    let wrapper = shallow(<SevenHour/>)
+    let currentLocation = wrapper.find(".current-location");
+
+    expect(currentLocation.props()).toEqual("Denver, CO");
+  });
 });
