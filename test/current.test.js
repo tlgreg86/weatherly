@@ -1,22 +1,24 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import WeatherAPI from "./WeatherAPI.js";
-import Main from "../lib/components/Main.js";
+import WeatherAPI from "./WeatherAPI.json";
 import Current from "../lib/components/Current.js";
-import Input from "../lib/components/Input.js";
 
-describe("state.input should change when input is changed", () => {
-  let wrapper = shallow(<Current currentWeather={[WeatherAPI]} />);
+describe("Current component", () => {
 
-  it("has a section with a current location", () => {
-    let currentLocation = wrapper.find(".current-container");
-
-    expect(currentLocation.length).toEqual(1);
+  it("renders enter a valid location", () => {
+    let wrapper = shallow(<Current currentWeather={[]} />);
+    expect(wrapper.is('.enter-valid-location')).toEqual(true);
   });
 
-  it("displays the location of the user input", () => {
-    let currentLocation = wrapper.find(".current-location");
-    
-    expect(currentLocation.props().children).toEqual("Denver, CO");
+  it('renders current forecast', () => {
+    let wrapper = shallow(<Current currentWeather={WeatherAPI} />);
+    expect(wrapper.is('.current-container')).toEqual(true);
   });
+
+  it('renders current day card with current location', () => {
+    let wrapper = shallow(<Current currentWeather={WeatherAPI} />);
+    let element = wrapper.find('.current-location')
+    expect(element.text()).toEqual("Denver, CO");
+  });
+
 });

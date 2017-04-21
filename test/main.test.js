@@ -1,30 +1,21 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import WeatherAPI from "./WeatherAPI.js";
 import Main from "../lib/components/Main.js";
 import Input from "../lib/components/Input.js";
+import TenDay from "../lib/components/TenDay.js";
+import SevenHour from "../lib/components/SevenHour.js";
+import Current from "../lib/components/Current.js";
 
-describe("main", () => {
+describe("Main component", () => {
 
-  it("state.input should change when input is changed", () => {
-    let wrapper = shallow(<Input fetchWeather={() => {}} />);
-    let button = wrapper.find(".submit-button");
-    let input = wrapper.find(".location-input");
+  it('renders all components', () => {
+    let wrapper = shallow(<Main />)
 
-    input.simulate("change", { target: { value: "Denver, CO" } });
-    expect(wrapper.state("userInput")).toEqual("Denver, CO");
-
-    button.simulate("click");
-    expect(wrapper.state("userInput")).toEqual("");
+    expect(wrapper.is('.container')).toEqual(true);
+    expect(wrapper.containsMatchingElement(<Input />)).toEqual(true);
+    expect(wrapper.containsMatchingElement(<Current />)).toEqual(true);
+    expect(wrapper.containsMatchingElement(<SevenHour />)).toEqual(true);
+    expect(wrapper.containsMatchingElement(<TenDay />)).toEqual(true);
   });
 
-  it("fetches weather with user input", () => {
-    let spy = jest.fn();
-    let wrapper = mount(<Input fetchWeather={spy} />);
-    let button = wrapper.find(".submit-button");
-    let location = wrapper.find("userInput");
-
-    button.simulate("click");
-    expect(spy).toHaveBeenCalledWith("Denver, CO");
-  });
 });
